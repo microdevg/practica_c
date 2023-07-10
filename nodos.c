@@ -33,8 +33,6 @@ Nodo*  processing_list(Nodo **origin,char* p_list){
     while (fgets(b, sizeof(b), _list) != NULL) {
             char* word = strtok(b, " ");           
             while (word != NULL ) {
-
-                printf("---%s\n ",word);
                 __add_new_word(origin,word);
                 word = strtok(NULL, " ");
             }
@@ -50,6 +48,7 @@ void show_list(Nodo **origin,char* path_output){
     }  
     while(*origin != NULL){
         fprintf(_output, "%s\n", (*origin)->content);
+        printf("---%s\n",(*origin)->content);
         *origin = (*origin)->next;
     }
 }
